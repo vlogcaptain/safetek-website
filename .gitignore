@@ -1,0 +1,2 @@
+# Exclude backup images to keep the repository and deployment lightweight
+images/backup/
