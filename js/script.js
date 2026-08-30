@@ -158,9 +158,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = contactForm.querySelector('input[name="email"]').value;
             const elevatorNo = contactForm.querySelector('input[name="elevatorNo"]').value;
             const message = contactForm.querySelector('textarea[name="message"]').value;
+            const privacyAgree = contactForm.querySelector('input[name="privacyAgree"]');
             
             if (!name || !email || !elevatorNo) {
                 alert('필수 입력 항목(이름, 이메일, 승강기 번호)을 채워주세요.');
+                return;
+            }
+
+            if (privacyAgree && !privacyAgree.checked) {
+                alert('개인정보 수집 및 이용에 동의해 주세요.');
+                privacyAgree.focus();
                 return;
             }
             
